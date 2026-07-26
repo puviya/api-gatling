@@ -35,7 +35,9 @@ go install github.com/puviya/api-gatling/cmd/cli@latest
 **To use as a Go Package in your project:**
 go get github.com/puviya/api-gatling
 
-# 💻 Usage 1: The CLI (Manual Testing)
+# 💻 Usage 1: The CLI
+
+go install github.com/puviya/api-gatling/cmd/api-gatling@latest
 
 ### Basic GET Request (Network/Cache Test)
 
@@ -92,7 +94,7 @@ package myapi_test
 		"math/rand"
 		"testing"
 		"time"
-		"github.com/puviya/api-gatling"
+		"go get github.com/puviya/api-gatling/apigatling"
 	)
 
 	func TestCheckoutPerformance(t *testing.T) {
