@@ -12,7 +12,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/puviya/api-gatling"
+	"github.com/puviya/api-gatling/apigatling"
 )
 
 func main() {
