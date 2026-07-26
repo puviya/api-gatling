@@ -86,23 +86,22 @@ cli --url "http://localhost:3000/api/checkout" \
 You can import api-gatling into your _test.go files to automate performance regression testing in your CI/CD pipelines (e.g., GitHub Actions).
 package myapi_test
 
-import (
-	"context"
-	"fmt"
-	"math/rand"
-	"testing"
-	"time"
+	import (
+		"context"
+		"fmt"
+		"math/rand"
+		"testing"
+		"time"
+		"github.com/puviya/api-gatling"
+	)
 
-	"github.com/puviya/api-gatling"
-)
-
-func TestCheckoutPerformance(t *testing.T) {
-	// 1. Initialize the engine using Functional Options
-	engine := apigatling.New(
-		"https://staging.mycompany.com/checkout",
-		apigatling.WithMethod("POST"),
-		apigatling.WithConcurrency(200),
-		apigatling.WithTotalRequests(10000),
+	func TestCheckoutPerformance(t *testing.T) {
+		// 1. Initialize the engine using Functional Options
+		engine := apigatling.New(
+			"https://staging.mycompany.com/checkout",
+			apigatling.WithMethod("POST"),
+			apigatling.WithConcurrency(200),
+			apigatling.WithTotalRequests(10000),
 		
 		// 2. Programmatically generate highly complex, dynamic payloads per request
 		apigatling.WithDynamicPayload(func() []byte {
@@ -123,5 +122,5 @@ func TestCheckoutPerformance(t *testing.T) {
 	}
 
 	t.Logf("Performance passed! RPS: %.2f | P99: %v", report.RPS, report.P99Latency)
-}
+	}
 
