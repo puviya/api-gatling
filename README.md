@@ -3,6 +3,9 @@
 [![Go Version](https://img.shields.io/badge/Go-1.21+-00ADD8?style=flat&logo=go)](https://golang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+<img width="1200" height="1200" alt="API-Gatling High-Concurrency Load Testing in Go  (1)" src="https://github.com/user-attachments/assets/acf83480-132d-41a6-81cb-361ca6ec6d32" />
+
+
 A high-performance, memory-safe HTTP load testing engine written in Go. 
 
 API-Gatling is designed to strictly benchmark backend infrastructure, database write-locks, and system breaking points by bypassing edge caches via dynamic payload templating. It can be used as a standalone **CLI tool** for quick tests, or imported as a **Go Package** for automated CI/CD performance assertions.
