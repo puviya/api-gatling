@@ -30,7 +30,13 @@ API-Gatling is designed to strictly benchmark backend infrastructure, database w
 ## 🛠 Installation
 
 **To use the CLI:**
-go install github.com/puviya/api-gatling/cmd/cli@latest
+
+1. go install github.com/puviya/api-gatling/cmd/cli@latest
+   
+2. Run this command to add Go's bin folder to your path
+   	export PATH=$PATH:$(go env GOPATH)/bin (Mac or Linux)
+	If you are on Windows:
+	You need to add %USERPROFILE%\go\bin to your System Environment Variables (under "Path").
 
 **To use as a Go Package in your project:**
 go get github.com/puviya/api-gatling
