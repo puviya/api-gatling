@@ -31,15 +31,18 @@ API-Gatling is designed to strictly benchmark backend infrastructure, database w
 
 **To use the CLI:**
 
-1. go install github.com/puviya/api-gatling/cmd/cli@latest
+1. go install github.com/puviya/api-gatling/cmd/api-gatling@latest
    
 2. Run this command to add Go's bin folder to your path
+   
    	export PATH=$PATH:$(go env GOPATH)/bin (Mac or Linux)
+   
 	If you are on Windows:
+
 	You need to add %USERPROFILE%\go\bin to your System Environment Variables (under "Path").
 
 **To use as a Go Package in your project:**
-go get github.com/puviya/api-gatling
+go get github.com/puviya/api-gatling/apigatling
 
 # 💻 Usage 1: The CLI
 
@@ -47,7 +50,7 @@ go install github.com/puviya/api-gatling/cmd/api-gatling@latest
 
 ### Basic GET Request (Network/Cache Test)
 
-cli --url "http://localhost:3000/api/users" \
+api-gatling --url "http://localhost:3000/api/users" \
     --requests 100000 \
     --concurrency 500
 
@@ -59,7 +62,7 @@ Create a payload.json file. Use the {{UUID}} tag anywhere inside it. API-Gatling
   "amount": 50
 }
 Run the load test:
-cli --url "http://localhost:3000/api/checkout" \
+api-gatling --url "http://localhost:3000/api/checkout" \
     --method POST \
     --headers "Content-Type: application/json, Authorization: Bearer token123" \
     --payload ./payload.json \
